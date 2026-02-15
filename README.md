@@ -101,7 +101,8 @@ Open [http://localhost:3000](http://localhost:3000).
 - **Node.js** 18+ (20+ recommended)
 - **PostgreSQL** 15+ with the `pgvector` extension
 - **Redis** 7+
-- **Firebase project** (for authentication) or set `DEV_BYPASS_AUTH=true` for local development
+- **npm** or **pnpm** package manager
+- Set `DEV_BYPASS_AUTH=true` in `.env.local` for local development without OAuth
 
 ### Step-by-Step
 
@@ -155,38 +156,42 @@ DATABASE_URL="postgresql://user:password@localhost:5432/maiachat"
 # Redis (session management, rate limiting)
 REDIS_URL="redis://localhost:6379"
 
-# Encryption key for API key storage (generate with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))")
+# Encryption key for API key storage
+# Generate with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ENCRYPTION_KEY="your-64-char-hex-string"
 
-# === AUTHENTICATION ===
+# === AUTHENTICATION (Better Auth) ===
 
-# Firebase Client SDK
-NEXT_PUBLIC_FIREBASE_API_KEY=""
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=""
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=""
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=""
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=""
-NEXT_PUBLIC_FIREBASE_APP_ID=""
+# Session signing secret (generate with: openssl rand -base64 32)
+BETTER_AUTH_SECRET=""
 
-# Firebase Admin SDK
-FIREBASE_PROJECT_ID=""
-FIREBASE_CLIENT_EMAIL=""
-FIREBASE_PRIVATE_KEY=""
+# Google OAuth for "Sign in with Google" (optional)
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
 
 # Admin users (comma-separated emails that are auto-promoted to admin)
 ADMIN_EMAILS="admin@example.com"
 
-# Skip Firebase auth for local development (creates a dev user automatically)
+# Skip auth for local development (creates a dev user automatically)
 # DEV_BYPASS_AUTH=true
 
 # === APPLICATION ===
 
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
+NEXT_PUBLIC_APP_VERSION="2.0.0"
 NODE_ENV="development"
 
-# === OPTIONAL: S3/MinIO (document storage) ===
+# === OPTIONAL: Google Integration (Gmail, Calendar) ===
 
+# Separate from auth — enables the email/calendar tools
+GOOGLE_OAUTH_CLIENT_ID=""
+GOOGLE_OAUTH_CLIENT_SECRET=""
+
+# === OPTIONAL: S3-compatible storage (document storage) ===
+
+# Works with AWS S3, Cloudflare R2, self-hosted MinIO, or any S3-compatible store
 S3_ENDPOINT="http://localhost:9000"
+S3_REGION="us-east-1"
 S3_ACCESS_KEY=""
 S3_SECRET_KEY=""
 S3_BUCKET="maiachat-documents"
@@ -196,13 +201,21 @@ S3_BUCKET="maiachat-documents"
 OPENAI_API_KEY=""
 ANTHROPIC_API_KEY=""
 GOOGLE_GENERATIVE_AI_API_KEY=""
+GOOGLE_AI_API_KEY=""
 XAI_API_KEY=""
 OPENROUTER_API_KEY=""
 DEEPGRAM_API_KEY=""
 
+# === OPTIONAL: Error tracking ===
+
+SENTRY_DSN=""
+NEXT_PUBLIC_SENTRY_DSN=""
+
 # === OPTIONAL: Full local access mode (enables all file/shell tools) ===
 # MAIACHAT_LOCAL_MODE=true
 ```
+
+See [`.env.example`](.env.example) for the full reference with detailed comments.
 
 ---
 
@@ -298,7 +311,7 @@ npm run db:studio
 
 | Table | Purpose |
 |---|---|
-| `users` | User accounts with Firebase UID mapping |
+| `users` | User accounts (Better Auth) |
 | `conversations` | Chat conversations with metadata |
 | `messages` | Individual messages (user + assistant) |
 | `agents` | Custom AI agent configurations |
@@ -959,8 +972,8 @@ MaiaChat tracks token usage and costs for every message.
 
 ### Authentication
 
-- **Firebase Authentication** with email/password and OAuth providers
-- **Session management** — Redis-backed sessions with 5-day expiry
+- **Better Auth** with email/password and Google OAuth
+- **Session management** — Redis-backed sessions with secure cookie storage
 - **HTTP-only secure cookies** — Session tokens stored securely
 - **Admin role system** — Email-based auto-promotion or manual role assignment
 
@@ -1074,7 +1087,7 @@ npm run db:studio      # Open Drizzle Studio (DB browser)
 
 ### Development Mode
 
-Set `DEV_BYPASS_AUTH=true` in `.env.local` to skip Firebase authentication during development. This creates a mock user automatically so you can test without setting up Firebase.
+Set `DEV_BYPASS_AUTH=true` in `.env.local` to skip authentication during development. This creates a mock user automatically so you can test without setting up Google OAuth.
 
 ---
 
