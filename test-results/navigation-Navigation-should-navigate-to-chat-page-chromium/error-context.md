@@ -1,0 +1,138 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e6]:
+        - generic [ref=e8]:
+          - generic [ref=e10]: M
+          - generic [ref=e11]:
+            - heading "MAIAChat" [level=2] [ref=e12]
+            - generic [ref=e13]: Multi-Agent AI Assistant
+        - generic [ref=e14]:
+          - button "New Chat" [ref=e15]:
+            - img
+            - text: New Chat
+          - button "Search... ⌘ K" [ref=e16]:
+            - generic [ref=e17]:
+              - img
+              - text: Search...
+            - generic:
+              - generic: ⌘
+              - text: K
+      - status [ref=e19]
+    - generic [ref=e20]:
+      - banner [ref=e21]:
+        - button "Toggle theme" [ref=e24]:
+          - img
+          - generic [ref=e25]: Toggle theme
+      - main [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e37]: M
+              - heading "Welcome to MAIAChat" [level=1] [ref=e38]
+              - paragraph [ref=e39]: Your multi-agent AI assistant with unlimited memory, powerful skills, and seamless multi-channel integration.
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - img [ref=e42]
+                - text: Multi-Agent Orchestration
+              - generic [ref=e45]:
+                - img [ref=e46]
+                - text: Tool Calling
+              - generic [ref=e50]:
+                - img [ref=e51]
+                - text: Real-time Web Access
+              - generic [ref=e54]:
+                - img [ref=e55]
+                - text: Background Agents
+            - generic [ref=e57]:
+              - generic [ref=e60]:
+                - img [ref=e62]
+                - generic [ref=e70]:
+                  - heading "Unlimited Memory" [level=3] [ref=e71]
+                  - paragraph [ref=e72]: Never forget a conversation. Full context across all your chats.
+              - generic [ref=e75]:
+                - img [ref=e77]
+                - generic [ref=e80]:
+                  - heading "20+ AI Skills" [level=3] [ref=e81]
+                  - paragraph [ref=e82]: Web search, code execution, image generation, and more.
+              - generic [ref=e85]:
+                - img [ref=e87]
+                - generic [ref=e91]:
+                  - heading "Bring Your Own Keys" [level=3] [ref=e92]
+                  - paragraph [ref=e93]: OpenAI, Anthropic, Google, xAI - use your own API keys.
+              - generic [ref=e96]:
+                - img [ref=e98]
+                - generic [ref=e100]:
+                  - heading "Multi-Channel" [level=3] [ref=e101]
+                  - paragraph [ref=e102]: Chat via Telegram, Discord, Slack, or right here on the web.
+              - generic [ref=e105]:
+                - img [ref=e107]
+                - generic [ref=e110]:
+                  - heading "Gemini File Search" [level=3] [ref=e111]
+                  - paragraph [ref=e112]: RAG-powered search across your uploaded documents.
+              - generic [ref=e115]:
+                - img [ref=e117]
+                - generic [ref=e120]:
+                  - heading "Voice Mode" [level=3] [ref=e121]
+                  - paragraph [ref=e122]: Speak naturally with real-time voice input and output.
+              - generic [ref=e125]:
+                - img [ref=e127]
+                - generic [ref=e130]:
+                  - heading "Scheduled Tasks" [level=3] [ref=e131]
+                  - paragraph [ref=e132]: Automate AI tasks on any schedule. Wake up to insights.
+              - generic [ref=e135]:
+                - img [ref=e137]
+                - generic [ref=e140]:
+                  - heading "Document Analysis" [level=3] [ref=e141]
+                  - paragraph [ref=e142]: Upload PDFs, Word docs, Excel files - AI understands them all.
+            - paragraph [ref=e144]: Type a message below to start chatting
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - generic [ref=e148]:
+                  - button "GPT-4o" [ref=e149]:
+                    - generic [ref=e152]: GPT-4o
+                    - img
+                  - button "Agents" [ref=e153]:
+                    - img
+                    - text: Agents
+                  - generic [ref=e154] [cursor=pointer]:
+                    - img [ref=e155]
+                    - generic [ref=e160]: RAG
+                    - switch [ref=e161]
+                    - checkbox
+                  - generic [ref=e162] [cursor=pointer]:
+                    - img [ref=e163]
+                    - generic [ref=e165]: Tools
+                    - switch [checked] [ref=e166]
+                    - checkbox [checked]
+                  - generic [ref=e167] [cursor=pointer]:
+                    - img [ref=e168]
+                    - generic [ref=e170]: Auto
+                    - switch [ref=e171]
+                    - checkbox
+                  - button "Skills" [ref=e172]:
+                    - img
+                    - generic [ref=e173]: Skills
+                - generic [ref=e174]: Press Enter to send, Shift+Enter for new line
+              - generic [ref=e175]:
+                - button "Attach file" [ref=e176]:
+                  - img
+                  - generic [ref=e177]: Attach file
+                - textbox "Type a message..." [ref=e179]
+                - generic [ref=e180]:
+                  - button "Start voice conversation" [ref=e181]:
+                    - img
+                  - button [ref=e182]:
+                    - img
+                - button "Send message" [disabled]:
+                  - img
+            - generic [ref=e183]: MAIAChat can make mistakes. Check important info.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e189] [cursor=pointer]:
+    - img [ref=e190]
+  - alert [ref=e193]
+```

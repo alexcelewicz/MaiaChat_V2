@@ -1,0 +1,179 @@
+# Page snapshot
+
+```yaml
+- generic:
+  - generic:
+    - complementary:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic: M
+                - generic:
+                  - heading [level=2]: MAIAChat
+                  - generic: Multi-Agent AI Assistant
+            - generic:
+              - button:
+                - img
+                - text: New Chat
+              - button:
+                - generic:
+                  - img
+                  - text: Search...
+                - generic:
+                  - generic: ⌘
+                  - text: K
+      - status
+    - generic:
+      - banner:
+        - generic:
+          - generic:
+            - button [expanded]:
+              - img
+              - generic: Toggle theme
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: M
+                  - heading [level=1]: Welcome to MAIAChat
+                  - paragraph: Your multi-agent AI assistant with unlimited memory, powerful skills, and seamless multi-channel integration.
+                - generic:
+                  - generic:
+                    - img
+                    - text: Multi-Agent Orchestration
+                  - generic:
+                    - img
+                    - text: Tool Calling
+                  - generic:
+                    - img
+                    - text: Real-time Web Access
+                  - generic:
+                    - img
+                    - text: Background Agents
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Unlimited Memory
+                        - paragraph: Never forget a conversation. Full context across all your chats.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: 20+ AI Skills
+                        - paragraph: Web search, code execution, image generation, and more.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Bring Your Own Keys
+                        - paragraph: OpenAI, Anthropic, Google, xAI - use your own API keys.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Multi-Channel
+                        - paragraph: Chat via Telegram, Discord, Slack, or right here on the web.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Gemini File Search
+                        - paragraph: RAG-powered search across your uploaded documents.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Voice Mode
+                        - paragraph: Speak naturally with real-time voice input and output.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Scheduled Tasks
+                        - paragraph: Automate AI tasks on any schedule. Wake up to insights.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic:
+                        - heading [level=3]: Document Analysis
+                        - paragraph: Upload PDFs, Word docs, Excel files - AI understands them all.
+                - generic:
+                  - paragraph: Type a message below to start chatting
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - button:
+                    - generic:
+                      - generic: GPT-4o
+                    - img
+                  - button:
+                    - img
+                    - text: Agents
+                  - generic:
+                    - img
+                    - generic: RAG
+                    - switch
+                    - checkbox
+                  - generic:
+                    - img
+                    - generic: Tools
+                    - switch [checked]
+                    - checkbox [checked]
+                  - generic:
+                    - img
+                    - generic: Auto
+                    - switch
+                    - checkbox
+                  - button:
+                    - img
+                    - generic: Skills
+                - generic: Press Enter to send, Shift+Enter for new line
+              - generic:
+                - button:
+                  - img
+                  - generic: Attach file
+                - generic:
+                  - textbox:
+                    - /placeholder: Type a message...
+                - generic:
+                  - button:
+                    - img
+                  - button:
+                    - img
+                - button [disabled]:
+                  - img
+            - generic: MAIAChat can make mistakes. Check important info.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=e6] [cursor=pointer]:
+    - img [ref=e7]
+  - alert
+  - menu "Toggle theme" [active] [ref=e10]:
+    - menuitem "Light" [ref=e11]:
+      - img
+      - text: Light
+    - menuitem "Dark" [ref=e12]:
+      - img
+      - text: Dark
+    - menuitem "System" [ref=e13]:
+      - img
+      - text: System
+```

@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MaiaChat Configuration",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "taskExecution": {
+      "type": "object",
+      "properties": {
+        "maxAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 3
+        },
+        "completionTimeout": {
+          "type": "integer",
+          "minimum": 5000,
+          "maximum": 600000,
+          "default": 60000
+        },
+        "requireToolCallForScheduled": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "notifications": {
+      "type": "object",
+      "properties": {
+        "failureNotifyOriginalChannel": {
+          "type": "boolean",
+          "default": true
+        },
+        "failureNotifyTelegram": {
+          "type": "boolean",
+          "default": true
+        },
+        "telegramUserId": {
+          "type": ["string", "null"],
+          "default": null
+        }
+      },
+      "additionalProperties": false
+    },
+    "cli": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "defaultCli": {
+          "type": "string",
+          "enum": ["claude", "gemini"],
+          "default": "claude"
+        },
+        "skipPermissions": {
+          "type": "boolean",
+          "default": true
+        },
+        "workspaceRoot": {
+          "type": "string",
+          "default": "./workspace"
+        },
+        "organizeByTask": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "tools": {
+      "type": "object",
+      "properties": {
+        "localFileAccessEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "commandExecutionEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "fileAccessBaseDir": {
+          "type": ["string", "null"],
+          "default": null
+        }
+      },
+      "additionalProperties": false
+    },
+    "memory": {
+      "type": "object",
+      "properties": {
+        "autoSave": {
+          "type": "boolean",
+          "default": true
+        },
+        "ragEnabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "userProfileMemoryEnabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "autoRecallEnabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "autoCaptureEnabled": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "clawdbotSkillsEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "clawdbotSourcePath": {
+          "type": "string",
+          "default": "./clawdbot-source"
+        },
+        "enabledSkills": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      },
+      "additionalProperties": false
+    },
+    "integrations": {
+      "type": "object",
+      "properties": {
+        "google": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": false
+            },
+            "scopes": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": ["gmail.readonly", "gmail.send", "calendar.readonly"]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "channels": {
+      "type": "object",
+      "properties": {
+        "autoStartOnBoot": {
+          "type": "boolean",
+          "default": false
+        },
+        "defaultContextMessages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "agents": {
+      "type": "object",
+      "properties": {
+        "backgroundAgentEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "backgroundAgentAutoStart": {
+          "type": "boolean",
+          "default": false
+        },
+        "defaultModel": {
+          "type": ["string", "null"],
+          "default": null
+        },
+        "proactiveMessagingEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "eventTriggersEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "bootScriptsEnabled": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "rateLimits": {
+      "type": "object",
+      "properties": {
+        "proactiveMaxPerHour": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "default": 10
+        },
+        "proactiveMaxPerDay": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000,
+          "default": 100
+        },
+        "triggerMaxPerHour": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "default": 60
+        }
+      },
+      "additionalProperties": false
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "ipFilteringEnabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "allowedIps": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "blockedIps": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      },
+      "additionalProperties": false
+    },
+    "general": {
+      "type": "object",
+      "properties": {
+        "visitorRetentionDays": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365,
+          "default": 30
+        },
+        "deploymentMode": {
+          "type": "string",
+          "enum": ["local", "hosted", "self-hosted"],
+          "default": "self-hosted"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "scheduled_tasks" ADD COLUMN "model_id" text;

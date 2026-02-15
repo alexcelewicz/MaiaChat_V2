@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /chat
+Allow: /shared/*
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /settings/
+Disallow: /dashboard/
+Disallow: /documents/
+Disallow: /agents/
+Disallow: /profiles/
+Disallow: /channels/
+Disallow: /inbox/
+Disallow: /scheduled-tasks/
+
+# Sitemap
+Sitemap: https://maiachat.app/sitemap.xml

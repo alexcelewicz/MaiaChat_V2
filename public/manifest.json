@@ -1,0 +1,52 @@
+{
+    "name": "MAIAChat - Multi-Agent AI Assistant",
+    "short_name": "MAIAChat",
+    "description": "Your secure, multi-agent AI assistant platform. Chat with 40+ models, manage emails, calendars, and more.",
+    "start_url": "/chat",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#6366f1",
+    "orientation": "any",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "/icon-192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-512.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["productivity", "utilities", "business"],
+    "shortcuts": [
+        {
+            "name": "New Chat",
+            "short_name": "Chat",
+            "description": "Start a new AI conversation",
+            "url": "/chat?new=1",
+            "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+        },
+        {
+            "name": "Documents",
+            "short_name": "Docs",
+            "description": "Manage your documents",
+            "url": "/documents",
+            "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+        },
+        {
+            "name": "Settings",
+            "short_name": "Settings",
+            "description": "Configure your AI assistant",
+            "url": "/settings",
+            "icons": [{ "src": "/icon-192.svg", "sizes": "192x192" }]
+        }
+    ],
+    "screenshots": [],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

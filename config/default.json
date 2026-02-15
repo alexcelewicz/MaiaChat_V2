@@ -1,0 +1,82 @@
+{
+  "$schema": "./config-schema.json",
+  "version": "1.0.0",
+
+  "taskExecution": {
+    "maxAttempts": 3,
+    "completionTimeout": 60000,
+    "requireToolCallForScheduled": true
+  },
+
+  "notifications": {
+    "failureNotifyOriginalChannel": true,
+    "failureNotifyTelegram": true,
+    "telegramUserId": null
+  },
+
+  "cli": {
+    "enabled": false,
+    "defaultCli": "claude",
+    "skipPermissions": true,
+    "workspaceRoot": "./workspace",
+    "organizeByTask": true
+  },
+
+  "tools": {
+    "localFileAccessEnabled": false,
+    "commandExecutionEnabled": false,
+    "fileAccessBaseDir": null
+  },
+
+  "memory": {
+    "autoSave": true,
+    "ragEnabled": true,
+    "userProfileMemoryEnabled": true,
+    "autoRecallEnabled": true,
+    "autoCaptureEnabled": true
+  },
+
+  "skills": {
+    "clawdbotSkillsEnabled": true,
+    "clawdbotSourcePath": "./clawdbot-source",
+    "enabledSkills": []
+  },
+
+  "integrations": {
+    "google": {
+      "enabled": false,
+      "scopes": ["gmail.readonly", "gmail.send", "calendar.readonly"]
+    }
+  },
+
+  "channels": {
+    "autoStartOnBoot": false,
+    "defaultContextMessages": 20
+  },
+
+  "agents": {
+    "backgroundAgentEnabled": false,
+    "backgroundAgentAutoStart": false,
+    "defaultModel": null,
+    "proactiveMessagingEnabled": false,
+    "eventTriggersEnabled": false,
+    "bootScriptsEnabled": false
+  },
+
+  "rateLimits": {
+    "proactiveMaxPerHour": 10,
+    "proactiveMaxPerDay": 100,
+    "triggerMaxPerHour": 60
+  },
+
+  "security": {
+    "ipFilteringEnabled": false,
+    "allowedIps": [],
+    "blockedIps": []
+  },
+
+  "general": {
+    "visitorRetentionDays": 30,
+    "deploymentMode": "self-hosted"
+  }
+}

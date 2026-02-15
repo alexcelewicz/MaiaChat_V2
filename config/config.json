@@ -1,0 +1,109 @@
+{
+  "version": "1.0.0",
+  "taskExecution": {
+    "maxAttempts": 5,
+    "completionTimeout": 80000,
+    "requireToolCallForScheduled": true
+  },
+  "notifications": {
+    "failureNotifyOriginalChannel": true,
+    "failureNotifyTelegram": true,
+    "telegramUserId": null
+  },
+  "cli": {
+    "enabled": true,
+    "defaultCli": "claude",
+    "skipPermissions": true,
+    "workspaceRoot": "./workspace",
+    "organizeByTask": true
+  },
+  "tools": {
+    "localFileAccessEnabled": true,
+    "commandExecutionEnabled": true,
+    "fileAccessBaseDir": null
+  },
+  "memory": {
+    "autoSave": true,
+    "ragEnabled": true,
+    "userProfileMemoryEnabled": true,
+    "autoRecallEnabled": true,
+    "autoCaptureEnabled": true,
+    "geminiRetrievalModel": "gemini-3-flash-preview",
+    "memoryMaxChars": 4000
+  },
+  "skills": {
+    "clawdbotSkillsEnabled": true,
+    "clawdbotSourcePath": "./clawdbot-source",
+    "enabledSkills": []
+  },
+  "integrations": {
+    "google": {
+      "enabled": true,
+      "scopes": [
+        "gmail.readonly",
+        "gmail.send",
+        "calendar.readonly"
+      ]
+    },
+    "hubspot": {
+      "enabled": true
+    },
+    "asana": {
+      "enabled": true
+    },
+    "httpRequest": {
+      "enabled": true,
+      "allowedDomains": []
+    },
+    "twitter": {
+      "enabled": true,
+      "tier1Enabled": true,
+      "tier2Enabled": true,
+      "tier3Enabled": true,
+      "tier4Enabled": false,
+      "fxTwitterEnabled": true,
+      "twitterApiIoKey": null,
+      "xApiBearerToken": null,
+      "xAiApiKey": null
+    }
+  },
+  "cost": {
+    "costOptimizationEnabled": false,
+    "monthlyBudgetUsd": 0,
+    "preferCheaperFallback": false,
+    "alertAtPercentage": 80
+  },
+  "channels": {
+    "autoStartOnBoot": true,
+    "defaultContextMessages": 20,
+    "defaultMaxTokens": 4096
+  },
+  "agents": {
+    "backgroundAgentEnabled": true,
+    "backgroundAgentAutoStart": true,
+    "defaultModel": "moonshotai/kimi-k2.5",
+    "proactiveMessagingEnabled": true,
+    "eventTriggersEnabled": true,
+    "bootScriptsEnabled": true,
+    "heartbeatIntervalMs": 900000,
+    "staleThresholdMs": 2700000
+  },
+  "rateLimits": {
+    "proactiveMaxPerHour": 10,
+    "proactiveMaxPerDay": 100,
+    "triggerMaxPerHour": 60
+  },
+  "security": {
+    "ipFilteringEnabled": true,
+    "allowedIps": [],
+    "blockedIps": []
+  },
+  "general": {
+    "visitorRetentionDays": 30,
+    "deploymentMode": "self-hosted"
+  },
+  "soul": {
+    "enabled": true,
+    "maxCharsPerFile": 20000
+  }
+}
