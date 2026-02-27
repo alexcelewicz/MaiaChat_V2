@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "taskExecution": {
     "maxAttempts": 5,
-    "completionTimeout": 80000,
+    "completionTimeout": 180000,
     "requireToolCallForScheduled": true
   },
   "notifications": {
@@ -20,7 +20,8 @@
   "tools": {
     "localFileAccessEnabled": true,
     "commandExecutionEnabled": true,
-    "fileAccessBaseDir": null
+    "fileAccessBaseDir": null,
+    "workspaceQuotaMb": 100
   },
   "memory": {
     "autoSave": true,
@@ -39,11 +40,7 @@
   "integrations": {
     "google": {
       "enabled": true,
-      "scopes": [
-        "gmail.readonly",
-        "gmail.send",
-        "calendar.readonly"
-      ]
+      "scopes": ["gmail.readonly", "gmail.send", "calendar.readonly"]
     },
     "hubspot": {
       "enabled": true
@@ -81,7 +78,7 @@
   "agents": {
     "backgroundAgentEnabled": true,
     "backgroundAgentAutoStart": true,
-    "defaultModel": "moonshotai/kimi-k2.5",
+    "defaultModel": "minimax/minimax-m2.5",
     "proactiveMessagingEnabled": true,
     "eventTriggersEnabled": true,
     "bootScriptsEnabled": true,
